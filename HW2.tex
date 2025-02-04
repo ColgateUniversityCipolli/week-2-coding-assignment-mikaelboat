@@ -153,12 +153,13 @@ We can compute the area using the Midpoint Rule as follows.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Write code for answer here.}
+\hlcom{# trapezoidal rule is equivalent to the 1/2 scale of the sum of the left and right areas}
 \hldef{left.area} \hlkwb{<-} \hlkwd{sum}\hldef{(delta.x}\hlopt{*}\hldef{(}\hlkwd{integrand}\hldef{(left.points)))}
 \hldef{right.area} \hlkwb{<-} \hlkwd{sum}\hldef{(delta.x}\hlopt{*}\hldef{(}\hlkwd{integrand}\hldef{(right.points)))}
-\hldef{(trap.area} \hlkwb{<-} \hldef{(delta.x} \hlopt{/} \hlnum{2}\hldef{)} \hlopt{*} \hldef{left.area} \hlopt{+} \hldef{right.area)}
+\hldef{(trap.area} \hlkwb{<-} \hldef{(}\hlnum{1} \hlopt{/} \hlnum{2}\hldef{)} \hlopt{*} \hldef{(left.area} \hlopt{+} \hldef{right.area))}
 \end{alltt}
 \begin{verbatim}
-## [1] 8.673864
+## [1] 8.6664
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -205,7 +206,7 @@ We can compute the area using the Midpoint Rule as follows.
   \hldef{\}}\hlkwa{else if}\hldef{(method} \hlopt{==} \hlsng{"Trapezoidial"}\hldef{)\{}
     \hldef{left.area} \hlkwb{<-} \hlkwd{sum}\hldef{(delta.x}\hlopt{*}\hldef{(}\hlkwd{integrand}\hldef{(left.points)))}
     \hldef{right.area} \hlkwb{<-} \hlkwd{sum}\hldef{(delta.x}\hlopt{*}\hldef{(}\hlkwd{integrand}\hldef{(right.points)))}
-    \hldef{area} \hlkwb{<-} \hldef{(delta.x} \hlopt{/} \hlnum{2}\hldef{)} \hlopt{*} \hldef{left.area} \hlopt{+} \hldef{right.area}
+    \hldef{area} \hlkwb{<-} \hldef{(}\hlnum{1} \hlopt{/} \hlnum{2}\hldef{)} \hlopt{*} \hldef{(left.area} \hlopt{+} \hldef{right.area)}
   \hldef{\}}\hlkwa{else}\hldef{\{}
     \hlkwd{stop}\hldef{(}\hlsng{"Please select a valid method (e.g., 'Left', 'Right', 'Midpoint', 'Trapezoidial')"}\hldef{)}
   \hldef{\}}
@@ -223,7 +224,7 @@ We can compute the area using the Midpoint Rule as follows.
              \hlkwc{n.rect} \hldef{=} \hlnum{100}\hldef{)}
 \end{alltt}
 \begin{verbatim}
-## [1] 8.673864
+## [1] 8.6664
 \end{verbatim}
 \begin{alltt}
 \hlcom{######################################}

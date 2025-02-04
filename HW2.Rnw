@@ -69,9 +69,10 @@ mid.points <- (left.points+right.points)/2
   \textbf{Solution:}
 <<size="scriptsize", warning=FALSE, message=FALSE>>=
 # Write code for answer here.
+# trapezoidal rule is equivalent to the 1/2 scale of the sum of the left and right areas
 left.area <- sum(delta.x*(integrand(left.points)))
 right.area <- sum(delta.x*(integrand(right.points)))
-(trap.area <- (delta.x / 2) * left.area + right.area)
+(trap.area <- (1 / 2) * (left.area + right.area))
 @
   \item Write a function that takes \texttt{a}, \texttt{b}, and number of 
   rectangles (\texttt{n.rect}) in as input and returns the Trapezoidial Rule 
@@ -114,7 +115,7 @@ riemann.sums <- function(fnct,                        # function to integrate
   }else if(method == "Trapezoidial"){
     left.area <- sum(delta.x*(integrand(left.points)))
     right.area <- sum(delta.x*(integrand(right.points)))
-    area <- (delta.x / 2) * left.area + right.area
+    area <- (1 / 2) * (left.area + right.area)
   }else{
     stop("Please select a valid method (e.g., 'Left', 'Right', 'Midpoint', 'Trapezoidial')")
   }
